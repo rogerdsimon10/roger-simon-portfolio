@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roger Simon | Final Partnerships & Client Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#111833;
+      --panel-2:#162042;
+      --text:#eef2ff;
+      --muted:#b8c1e3;
+      --accent:#59a7ff;
+      --accent-2:#7be0c6;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(89,167,255,.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(123,224,198,.12), transparent 24%),
+        linear-gradient(180deg, #08101f 0%, #0b1020 100%);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+    .nav{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(12px);
+      background:rgba(11,16,32,.7);
+      border-bottom:1px solid var(--border);
+    }
+    .nav .inner{
+      display:flex; align-items:center; justify-content:space-between;
+      min-height:72px;
+    }
+    .brand{font-weight:800; letter-spacing:.2px}
+    .navlinks{display:flex; gap:20px; flex-wrap:wrap}
+    .hero{ padding:78px 0 36px; }
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:18px;
+    }
+    h1{
+      font-size:clamp(38px,6vw,64px);
+      line-height:1.02;
+      margin:0 0 14px;
+      letter-spacing:-1.4px;
+    }
+    .subtitle{
+      font-size:clamp(18px,2.4vw,24px);
+      color:var(--muted);
+      max-width:900px;
+      margin:0 0 24px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
+      align-items:start;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      border-radius:24px;
+      padding:24px;
+    }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .stat{
+      padding:18px;
+      border-radius:18px;
+      background:var(--panel);
+      border:1px solid var(--border);
+    }
+    .stat .num{
+      font-size:30px;
+      font-weight:800;
+      line-height:1;
+      margin-bottom:8px;
+    }
+    section{ padding:18px 0 8px; }
+    h2{
+      font-size:30px;
+      margin:18px 0 14px;
+      letter-spacing:-.6px;
+    }
+    h3{margin:0 0 8px; font-size:20px}
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+    .pill-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .pill{
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(89,167,255,.12);
+      border:1px solid rgba(89,167,255,.22);
+      color:#dfeaff;
+      font-size:14px;
+    }
+    .bullet-list{ margin:0; padding-left:20px; }
+    .snapshot{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:18px 18px 12px;
+      margin-bottom:14px;
+    }
+    .muted{color:var(--muted)}
+    .contact{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+    .contact .item{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+    }
+    .footer{
+      padding:36px 0 56px;
+      color:var(--muted);
+      text-align:center;
+    }
+    .cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
+    .btn{
+      display:inline-block;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(89,167,255,.18), rgba(89,167,255,.08));
+      color:white;
+      font-weight:700;
+    }
+    .btn.secondary{
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+    }
+    @media (max-width: 860px){
+      .hero-grid, .grid-2, .contact{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .nav .inner{gap:12px; align-items:flex-start; padding:14px 0}
+      .navlinks{font-size:14px}
+    }
+    @media (max-width:560px){
+      .stats{grid-template-columns:1fr}
+      .wrap{padding:0 16px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap inner">
+      <div class="brand">Roger Simon</div>
+      <div class="navlinks">
+        <a href="#clients">Clients</a>
+        <a href="#international">International</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#impact">Impact</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div class="card">
+        <div class="eyebrow">Enterprise & Mid-Market Partnerships</div>
+        <h1>Partnerships & Client Portfolio</h1>
+        <p class="subtitle">
+          I lead and close enterprise and mid-market partnerships across hospitality, entertainment, retail, and technology, bringing high-impact, revenue-generating automated experiences to brands, venues, and destinations.
+        </p>
+        <p class="muted">
+          My approach is deeply consultative, focused on C-suite relationships, long-term scalability, and building partnerships that unlock multiple revenue streams.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#impact">View Impact Highlights</a>
+          <a class="btn secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="stats">
+          <div class="stat">
+            <div class="num">$3.1M+</div>
+            <div>Enterprise & mid-market revenue closed</div>
+          </div>
+          <div class="stat">
+            <div class="num">50+</div>
+            <div>Strategic accounts across multiple verticals</div>
+          </div>
+          <div class="stat">
+            <div class="num">8+</div>
+            <div>International markets deployed</div>
+          </div>
+          <div class="stat">
+            <div class="num">3</div>
+            <div>Growth pillars: partnerships, custom machines, ad revenue</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="clients">
+      <h2>Selected Clients & Partnerships</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Enterprise & Global Brands</h3>
+          <div class="pill-row">
+            <span class="pill">Nokia</span>
+            <span class="pill">Marriott Hotels</span>
+            <span class="pill">Hyatt Hotels</span>
+          </div>
+
+          <h3 style="margin-top:20px;">Entertainment, Attractions & FECs</h3>
+          <div class="pill-row">
+            <span class="pill">Sky Dancer Casino & Resort</span>
+            <span class="pill">Launch Entertainment</span>
+            <span class="pill">Sky Zone</span>
+            <span class="pill">Charleston Dirty Birds Baseball Team</span>
+            <span class="pill">Regional FECs</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Zoos, Aquariums & Public Attractions</h3>
+          <div class="pill-row">
+            <span class="pill">Lake Superior Zoo</span>
+            <span class="pill">Long Island Aquarium</span>
+            <span class="pill">Torre Mirador Latino (Mexico)</span>
+          </div>
+
+          <h3 style="margin-top:20px;">Retail, Food & Grocery</h3>
+          <div class="pill-row">
+            <span class="pill">Rancho Markets</span>
+            <span class="pill">Regional Restaurants</span>
+            <span class="pill">Independent Supermarkets</span>
+          </div>
+          <p class="muted" style="margin-top:18px;">All logos and client names represent direct partnerships and closed deals. References available upon request.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Deal Snapshots</h2>
+      <div class="snapshot">
+        <h3>Nokia</h3>
+        <ul class="bullet-list">
+          <li>Structured scalable experiential retail deployments within corporate environments</li>
+          <li>Worked directly with executive stakeholders to align on innovation strategy and long-term rollout</li>
+        </ul>
+      </div>
+      <div class="snapshot">
+        <h3>Marriott Hotels</h3>
+        <ul class="bullet-list">
+          <li>Closed partnerships for guest-facing experiential activations across multiple properties</li>
+          <li>Consulted ownership and senior leadership on ROI, guest engagement, and monetization</li>
+        </ul>
+      </div>
+      <div class="snapshot">
+        <h3>Hyatt Hotels</h3>
+        <ul class="bullet-list">
+          <li>Partnered with leadership to introduce premium, revenue-generating experiences aligned with brand standards</li>
+          <li>Positioned deployments as both guest experience enhancements and profit centers</li>
+        </ul>
+      </div>
+      <div class="snapshot">
+        <h3>Entertainment & Attractions</h3>
+        <ul class="bullet-list">
+          <li>Closed owner-level deals for high-traffic venues including casinos, stadiums, Sky Zone locations, zoos, and aquariums</li>
+          <li>Designed deployments to maximize throughput, engagement, and repeat usage</li>
+          <li>Positioned machines as both attraction drivers and standalone revenue streams</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="international">
+      <h2>International Expansion & Market Development</h2>
+      <div class="card">
+        <ul class="bullet-list">
+          <li>Led expansion of Sweet Robo’s footprint across Europe, LATAM, and Australia, deploying machines in markets including Greece, United Kingdom, Netherlands, Australia, Mexico, Argentina, Brazil, and others</li>
+          <li>Built and managed partnerships with international distributors, operators, and venue owners to drive localized go-to-market strategies</li>
+          <li>Navigated cross-border logistics, import/export requirements, and operational setup to ensure seamless deployment</li>
+          <li>Adapted pricing, positioning, and partnership structures based on regional market dynamics and consumer behavior</li>
+          <li>Established Sweet Robo as a globally scalable experiential brand through strategic market entry initiatives</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <h2>Leadership & Key Initiatives</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Advertising Revenue Integration</h3>
+          <p class="muted">Spearheaded initiative</p>
+          <ul class="bullet-list">
+            <li>Partnered with advertising agencies to integrate brand campaigns directly into machine experiences</li>
+            <li>Created incremental revenue streams through digital and physical ad placements</li>
+            <li>Generated added value for both Sweet Robo and venue partners through monetization beyond core transactions</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Custom Machine Division</h3>
+          <p class="muted">Division lead</p>
+          <ul class="bullet-list">
+            <li>Led development and execution of fully customized machines for strategic partners</li>
+            <li>Collaborated with brands including Harvard University, Kith, and others to deliver bespoke experiential activations</li>
+            <li>Bridged product, design, and client vision to create high-impact branded deployments</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Tradeshow Leadership</h3>
+          <p class="muted">Company-facing growth role</p>
+          <ul class="bullet-list">
+            <li>Led execution of major tradeshow booths and activations, representing the company as the face of the brand</li>
+            <li>Developed booth strategy, live demos, and engagement tactics to drive high-quality pipeline</li>
+            <li>Consistently generated enterprise-level opportunities through event presence</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>How I Work</h3>
+          <ul class="bullet-list">
+            <li>Consultative, value-driven selling with CEO, owner, and C-suite stakeholders</li>
+            <li>Full-cycle sales ownership across complex, multi-stakeholder deals</li>
+            <li>Data-driven storytelling and ROI positioning</li>
+            <li>Land-and-expand partnership strategy</li>
+            <li>Cross-functional collaboration across operations, product, engineering, and marketing</li>
+            <li>Strong commercial judgment — knowing when to push and when to align</li>
+            <li>International business development and market expansion experience</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <h2>Impact Highlights</h2>
+      <div class="grid-2">
+        <div class="card">
+          <ul class="bullet-list">
+            <li><strong>$3.1M+</strong> in enterprise and mid-market revenue closed</li>
+            <li><strong>50+</strong> strategic accounts across hospitality, entertainment, retail, and attractions</li>
+            <li>Spearheaded new revenue verticals through advertising and custom machine solutions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="bullet-list">
+            <li>Led international expansion across <strong>8+ global markets</strong></li>
+            <li>Consistent top sales performer with strong pipeline generation and close rates</li>
+            <li>Built partnerships designed for scalability, repeat revenue, and long-term brand value</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div class="item"><strong>Location</strong><br/>New York, NY</div>
+        <div class="item"><strong>Email</strong><br/><a href="mailto:rogerdsimon10@gmail.com">rogerdsimon10@gmail.com</a></div>
+        <div class="item"><strong>Phone</strong><br/><a href="tel:+19293276891">929-327-6891</a></div>
+        <div class="item"><strong>LinkedIn</strong><br/><a href="https://linkedin.com/in/roger-simon-74a380293">linkedin.com/in/roger-simon-74a380293</a></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Final portfolio website version built for easy sharing and presentation.
+    </div>
+  </main>
+</body>
+</html>
